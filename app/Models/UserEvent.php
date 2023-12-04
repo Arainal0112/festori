@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Transaksi;
+use App\Models\Event;
 
-class User extends Authenticatable
+class UserEvent extends Authenticatable 
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,8 +18,9 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
     protected $fillable = [
-        'name',
+        'nama_user_event',
         'email',
         'password',
     ];
@@ -29,7 +30,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $hidden = [
+
+     protected $hidden = [
         'password',
         'remember_token',
     ];
@@ -39,12 +41,15 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
+
+     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 
-    public function transaksi()
+
+
+    public function event()
     {
-        return $this->hasOne(Transaksi::class, 'id_trnasaksi', 'id');
+        return $this->hasMany(Event::class, 'id_userEvent', 'id');
     }
 }
