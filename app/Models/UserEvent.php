@@ -19,8 +19,9 @@ class UserEvent extends Authenticatable
      * @var array<int, string>
      */
 
+    protected $table = 'user_event';
     protected $fillable = [
-        'nama_user_event',
+        'name_user_event',
         'email',
         'password',
     ];
