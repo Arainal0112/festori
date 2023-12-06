@@ -40,7 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        // 'user_event' => [
+        //     'driver' => 'session',
+        //     'provider' => 'user_event',
+        // ],
     ],
+
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -65,10 +72,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'user_event' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\UserEvent::class,
+        ],
     ],
 
     /*

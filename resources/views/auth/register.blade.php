@@ -25,7 +25,7 @@
                                 @endif
 
                                 <form method="POST" action="{{ route('register') }}" class="user">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    @csrf
 
                                     <div class="form-group">
                                         <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
@@ -45,6 +45,14 @@
 
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="role">{{ __('Role') }}</label>
+                                        <select id="role" class="form-control" name="role" required>
+                                            <option value="user">User</option>
+                                            <option value="userEvent">User Event</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
