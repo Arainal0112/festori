@@ -11,27 +11,29 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="{{asset('images/event/event1.jpg')}}" alt="">
+            <img src="{{asset('images/event/'. $event->foto_event)}}" alt="">
           </div>
         </div>
         <div class="col-md-6">
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                Ngobrolin Kerja di BUMN
+                {{$event->nama_event}}
               </h2>
             </div>
             <span>
-                " TAHU LEBIH & LEBIH TAHU "
+              {{$event->deskripsi_event}}
             </span>
-            <p>
-                Sabtu, 28 Oktober 2023
-            </p>
-            <div class="options">
-                <h6>
-                    Gratis
-                </h6>
-            </div>
+            <div>
+              <p class="m-0 mt-2">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                  <span class="ml-2">{{$event->tanggal_event}}</span>
+              </p>
+              <p class="m-0">
+                  <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  <span class="ml-2">{{$event->waktu}}</span>
+              </p>
+          </div>
           </div>
         </div>
       </div>

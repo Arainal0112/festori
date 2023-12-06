@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,17 +23,36 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    // USER
     public function index()
     {
-        return view('pages.users.home');
+        $kategori = Kategori::all();
+        $event = Event::all();
+        $latestEvent = Event::latest()->take(2)->get();
+        return view('pages.users.home', compact('event', 'kategori', 'latestEvent'));
     }
-    public function event() {
-        return view('pages.users.event');
+
+    public function event()
+    {
+        $kategori = Kategori::all();
+        $event = Event::all();
+        return view('pages.users.event', compact('event', 'kategori'));
     }
-    public function detail() {
-        return view('pages.users.detail');
+    public function detail(Request $request, $id)
+    {
+
+        $event = Event::find($id);
+        return view('pages.users.detail', compact('event'));
     }
-    public function order() {
+    // USER EVENT
+    public function user_event()
+    {
+        return view('pages.user-event.home');
+    }
+    //ADMIN
+    public function order()
+    {
         return view('pages.users.order');
     }
 }
