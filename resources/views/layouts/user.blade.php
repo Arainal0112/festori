@@ -27,6 +27,29 @@
     @include('components.footer')
 
     @include('partials.script')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var dropdown = document.getElementById('userDropdown');
+            var dropdownContent = document.getElementById('dropdownContent');
+        
+            dropdown.addEventListener('click', function (event) {
+                event.stopPropagation(); // Menghentikan penyebaran event ke window
+        
+                if (dropdownContent.style.display === 'block') {
+                    dropdownContent.style.display = 'none';
+                } else {
+                    dropdownContent.style.display = 'block';
+                }
+            });
+        
+            window.addEventListener('click', function () {
+                if (dropdownContent.style.display === 'block') {
+                    dropdownContent.style.display = 'none';
+                }
+            });
+        });
+        
+    </script>
 </body>
 
 </html>

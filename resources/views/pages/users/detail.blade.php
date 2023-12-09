@@ -33,6 +33,11 @@
                   <i class="fa fa-clock-o" aria-hidden="true"></i>
                   <span class="ml-2">{{$event->waktu}}</span>
               </p>
+              <div class="options ml-auto">
+                <a href="{{ route('users.order') }}">
+                    Beli Tiket
+                </a>
+            </div>
           </div>
           </div>
         </div>

@@ -28,8 +28,9 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    protected function validator(array $data)
+    protected function validator(Request $request)
     {
+        $data = $request->all();
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => [
@@ -42,8 +43,9 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function create(array $data)
+    protected function create(Request $request)
     {
+        $data = $request->all();
         $role = $data['role'];
 
         if ($role === 'user') {
@@ -62,6 +64,6 @@ class RegisterController extends Controller
 
         // Handle other cases if needed
 
-        return null;
+        return redirect()->route('login');
     }
 }
