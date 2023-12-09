@@ -13,7 +13,15 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    
+     public function tampilEvent()
+    {
+        $kategori = Kategori::all();
+        $event = Event::with('tiket')->get();
+        $latestEvent = Event::all();
+        return view('pages.user-event.home', compact('event', 'kategori', 'latestEvent'));
+    }
+     public function index()
     {
         $event = Event::all();
         $kategori = Kategori::all();

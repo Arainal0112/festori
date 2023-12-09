@@ -13,14 +13,14 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item {{ request()->routeIs('user-event.home') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('user-event.home') }}">
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('user-event.tampil-event') }}">
             <div class="row">
                 <div class="col-2">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                 </div>
                 <div class="col">
-                    <span>{{ __('Dashboard') }}</span>
+                    <span>Dashboard</span>
                 </div>
             </div>
         </a>

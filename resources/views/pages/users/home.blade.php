@@ -135,6 +135,14 @@
                                             <i class="fa fa-clock-o" aria-hidden="true"></i>
                                             <span class="ml-2">{{$last->waktu}}</span>
                                         </p>
+                                        <p class="m-0">
+                                            <strong>Jumlah Tiket:</strong>
+                                            <span class="ml-2"><strong>{{ $last->tiket->isNotEmpty() ? $last->tiket->first()->jumlah_tiket : 'tiket belum tersedia' }}</strong></span>
+                                        </p>
+                                        <p class="m-0">
+                                            <strong>Harga Tiket:</strong>
+                                            <span class="ml-2"><strong>{{ $last->tiket->isNotEmpty() ? $last->tiket->first()->harga_tiket : '-' }}</strong></span>
+                                        </p>
                                     </div>
                                 
                                 <a href="{{ route('users.detail-event', $last->id) }}">
@@ -195,6 +203,14 @@
                                         <p class="m-0">
                                             <i class="fa fa-clock-o" aria-hidden="true"></i>
                                             <span class="ml-2">{{$Event->waktu}}</span>
+                                        </p>
+                                        <p class="m-0">
+                                            <strong>Jumlah Tiket:</strong>
+                                            <span class="ml-2"><strong>{{ $last->tiket->isNotEmpty() ? $last->tiket->first()->jumlah_tiket : 'tiket belum tersedia' }}</strong></span>
+                                        </p>
+                                        <p class="m-0">
+                                            <strong>Harga Tiket:</strong>
+                                            <span class="ml-2"><strong>{{ $last->tiket->isNotEmpty() ? $last->tiket->first()->harga_tiket : '-' }}</strong></span>
                                         </p>
                                     </div>
                                     <div class="options ml-auto">
