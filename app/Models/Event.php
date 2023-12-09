@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -22,6 +21,7 @@ class Event extends Model
         'waktu',
         'tanggal_event',
         'status',
+        'kategori_id',
     ];
 
     public function userEvent()
@@ -31,7 +31,11 @@ class Event extends Model
 
     public function tiket()
     {
-        return $this->belongsTo(Tiket::class, 'id_tiket', 'id');
+        return $this->hasMany(Tiket::class, 'id_event', 'id');
+    }
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'kategori_id');
     }
 
 }
