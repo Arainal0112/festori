@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -32,7 +31,7 @@ class Event extends Model
 
     public function tiket()
     {
-        return $this->belongsTo(Tiket::class, 'id_tiket', 'id');
+        return $this->hasMany(Tiket::class, 'id_event', 'id');
     }
     public function kategori()
     {

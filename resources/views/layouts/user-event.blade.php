@@ -21,6 +21,8 @@
 
     <!-- Favicon -->
     <link href="{{ asset('img/logo.png') }}" rel="icon" type="image/png">
+    @include('partials.style')
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body id="page-top">
 
@@ -89,5 +91,6 @@
 
 <!-- Scripts -->
 @include('partials.admin.scripts')
+@include('partials.script')
 </body>
 </html>

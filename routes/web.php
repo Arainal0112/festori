@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\TiketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,9 @@ Route::prefix('/admin')->name('admin.')->group(function () {
 });
 
 Route::prefix('/user-event')->group(function () {
-    Route::get('/', [HomeController::class, 'user_event'])->name('user-event.home');
+    Route::get('/', [EventController::class, 'tampilEvent'])->name('user-event.tampil-event');
+
+    // Route::get('/', [HomeController::class, 'user_event'])->name('user-event.home');
     Route::resource('/event', EventController::class);
-    
+    Route::resource('/tiket', TiketController::class);
 });
