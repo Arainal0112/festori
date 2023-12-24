@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\TiketController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -39,9 +40,12 @@ Route::prefix('/')->name('users.')->group(function () {
     Route::get('/event', [HomeController::class, 'event'])->name('event');
     Route::get('/detail/{id}', [HomeController::class, 'detail'])->name('detail-event');
     
+    
     // User Routes
     Route::middleware('auth:user')->group(function () {
-        Route::get('/order', [HomeController::class, 'order'])->name('order');
+        // Route::get('/order', [HomeController::class, 'order'])->name('order');
+        Route::resource('/transaksi', TransaksiController::class)->only([
+            'store',]);
     });
 });
 

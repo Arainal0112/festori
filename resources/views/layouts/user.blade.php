@@ -14,10 +14,17 @@
     <link rel="shortcut icon" href="images/favicon.png" type="">
 
     <title> Feane </title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     @include('partials.style')
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+    <style>
+        /* Gaya tambahan untuk warna tombol */
+        .btn-custom {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
 
 </head>
 <body class="">
