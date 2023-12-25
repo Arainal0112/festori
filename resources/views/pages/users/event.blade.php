@@ -13,34 +13,39 @@
 
         <ul class="filters_menu">
             <li class="active" data-filter="*">All</li>
-            <li data-filter=".burger">Music</li>
-            <li data-filter=".fest">Fest</li>
-            <li data-filter=".pasta">Education</li>
+            @foreach ($kategori as $Kategori)
+            <li data-filter=".{{$Kategori->nama_kategori}}">{{$Kategori->nama_kategori}}</li>
+            @endforeach
         </ul>
 
         <div class="filters-content">
             <div class="row grid">
-                <div class="col-sm-6 col-lg-4 all fest">
+                @foreach ($event as $Event)
+                <div class="col-sm-6 col-lg-4 all {{$Event->kategori->nama_kategori}}">
                     <div class="box">
                         <div>
                             <div class="img-box">
-                                <img src="{{ asset('images/event/event1.jpg') }}" alt="">
+                                <img src="{{ asset('images/event/' . $Event->foto_event) }}" alt="">
                             </div>
                             <div class="detail-box">
                                 <h5>
-                                    Ngobrolin Kerja di BUMN
+                                {{$Event->nama_event}}
                                 </h5>
                                 <span>
-                                    " TAHU LEBIH & LEBIH TAHU "
+                                    {{$Event->deskripsi_event}}
                                 </span>
-                                <p>
-                                    Sabtu, 28 Oktober 2023
-                                </p>
-                                <div class="options">
-                                    <h6>
-                                        Gratis
-                                    </h6>
-                                    <a href="{{route('users.detail')}}">
+                                <div>
+                                    <p class="m-0 mt-2">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <span class="ml-2">{{$Event->tanggal_event}}</span>
+                                    </p>
+                                    <p class="m-0">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        <span class="ml-2">{{$Event->waktu}}</span>
+                                    </p>
+                                </div>
+                                <div class="options ml-auto">
+                                    <a href="{{ route('users.detail-event', $Event->id) }}">
                                         <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                     </a>
                                 </div>
@@ -48,6 +53,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
         <div class="btn-box">
@@ -55,6 +61,7 @@
                 View More
             </a>
         </div>
+    </div>
     </div>
 </section>
 

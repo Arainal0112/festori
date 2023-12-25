@@ -9,7 +9,7 @@
     <div class="container">
         <div class="heading_container">
             <h2>
-                Pasang Iklan
+                Beli Tiket
             </h2>
         </div>
         <div class="row">

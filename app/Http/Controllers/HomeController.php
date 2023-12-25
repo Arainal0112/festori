@@ -45,11 +45,16 @@ class HomeController extends Controller
         $event = Event::find($id);
         return view('pages.users.detail', compact('event'));
     }
+    public function eventAll(){
+        return view('pages.users.event');
+    }
     // USER EVENT
     public function user_event()
     {
         return view('pages.user-event.home');
     }
+
+
     //ADMIN
     public function order()
     {

@@ -241,7 +241,7 @@ a:focus {
   padding: 8px 30px;
   background-color: #1c284bff;
   color: #ffffff;
-  border-radius: 45px;
+  border-radius: 10px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: none;
@@ -249,6 +249,33 @@ a:focus {
 
 .user_option .order_online:hover {
   background-color: #f2571a;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  padding: 8px 30px;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content:hover {
+  background-color: #ff6161;
+  color: black;
 }
 
 .custom_nav-container .navbar-toggler {

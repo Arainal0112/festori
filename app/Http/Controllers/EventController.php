@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\Kategori;
+use App\Models\Tiket;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:userEvent');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -84,7 +89,8 @@ class EventController extends Controller
     public function show($id)
     {
         $event = Event::find($id);
-        return view('pages.user-event.event.detail', compact('event'));
+        $tiket = Tiket::all();
+        return view('pages.user-event.event.detail', compact('event', 'tiket'));
     }
 
     /**
