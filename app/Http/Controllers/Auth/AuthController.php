@@ -33,7 +33,7 @@ class AuthController extends Controller
             return redirect()->route('users.order');
         } elseif (Auth::guard('userEvent')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('user-event.home');
+            return redirect()->route('user-event.tampil-event');
         } elseif (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('admin.home');

@@ -11,11 +11,12 @@ class Transaksi extends Model
 {
     use HasFactory;
 
-    protected $table = "tiket";
+    protected $table = "transaksi";
     protected $fillable = [
         'id',
         'id_tiket',
         'id_user',
+        'jumlah',
         'total',
     ];
 
