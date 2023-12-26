@@ -30,7 +30,7 @@ class AuthController extends Controller
 
         if (Auth::guard('user')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('users.order');
+            return redirect()->route('users.home');
         } elseif (Auth::guard('userEvent')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('user-event.tampil-event');

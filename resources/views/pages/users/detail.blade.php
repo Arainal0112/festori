@@ -43,7 +43,7 @@
                     <div class="row">
                       <div class="col-lg-12">
                         <h6 style="color: black;">Deskripsi :</h6>
-                        <h5 class="font-weight-bold" style="color: black;">{{$event->deskripsi_event}}</h5>
+                        <h5 style="color: black;">{!!$event->deskripsi_event!!}</h5>
                         <h6 style="color: black;">Lokasi :</h6>
                         <h5 class="font-weight-bold" style="color: black;">{{$event->lokasi}}</h5>
                         <h6 style="color: black;">Waktu :</h6>
@@ -85,7 +85,7 @@
                         </button>
                     </div>
                     <div class="col-md-3">
-                        <a class="btn btn-custom btn-block mt-3" onclick="tampilkanModalKonfirmasi()">
+                        <a class="btn btn-custom btn-block mt-3 p-2" onclick="tampilkanModalKonfirmasi()">
                             Beli Tiket
                         </a>
                     </div>

@@ -12,3 +12,6 @@
 <link href={{ asset('css/style.css')}} rel="stylesheet" />
 <!-- responsive style -->
 <link href={{ asset('css/responsive.css')}} rel="stylesheet" />
+
+<link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower|Inknut+Antiqua|Lora|Ravi+Prakash" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"  />

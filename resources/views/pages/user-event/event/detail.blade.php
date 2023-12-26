@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h6>Deskripsi :</h6>
-                            <h5 class="font-weight-bold">{{$event->deskripsi_event}}</h5>
+                            <h5>{!!$event->deskripsi_event!!}</h5>
                         <h6>Lokasi :</h6>
                             <h5 class="font-weight-bold">{{$event->lokasi}}</h5>
                             <h6>Waktu :</h6>

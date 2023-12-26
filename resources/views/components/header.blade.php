@@ -27,6 +27,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.event') }}">Event</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.riwayat') }}">Riwayat</a>
+                        </li>
 
                     </ul>
                     <div class="user_option">

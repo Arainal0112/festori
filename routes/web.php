@@ -39,6 +39,7 @@ Route::prefix('/')->name('users.')->group(function () {
     Route::get('', [HomeController::class, 'index'])->name('home');
     Route::get('/event', [HomeController::class, 'event'])->name('event');
     Route::get('/detail/{id}', [HomeController::class, 'detail'])->name('detail-event');
+    Route::get('/riwayat', [HomeController::class, 'riwayat'])->name('riwayat');
     
     
     // User Routes
@@ -65,5 +66,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::prefix('/admin')->name('admin.')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('home');
         Route::get('/order', [AdminController::class, 'order'])->name('order');
+        Route::put('/order/accept/{id}', [AdminController::class, 'acceptEvent'])->name('accept');
+
     });
 });

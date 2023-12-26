@@ -34,7 +34,7 @@
                                         </div>
                                         <div class="detail-box">
                                             <h5>{{ $last->nama_event }}</h5>
-                                            <span>{{ $last->deskripsi_event }}</span>
+                                            <span>{!! $last->deskripsi_event !!}</span>
                                             <div>
                                                 <p class="m-0 mt-2">
                                                     <i class="fa fa-calendar" aria-hidden="true"></i>

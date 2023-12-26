@@ -31,7 +31,8 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="post" action="{{ route('event.update', $event->id) }}" id="myForm" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('event.update', $event->id) }}" id="myForm"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
@@ -46,8 +47,13 @@
                                         value="{{ $event->nama_event }}">
                                     <label class="form-control-label" for="deskripsi_event">Deskripsi<span
                                             class="small text-danger">*</span></label>
-                                    <input type="text" id="deskripsi_event" class="form-control" name="deskripsi_event"
-                                        value="{{ $event->deskripsi_event }}">
+                                    <div id="deskripsi_event">
+                                        @if (isset($event))
+                                            {!! $event->deskripsi_event !!}
+                                        @endif
+                                    </div>
+                                    <input type="hidden" id="deskripsi_event_input" name="deskripsi_event" value="">
+
 
                                     <label class="form-control-label" for="foto_event">Foto<span
                                             class="small text-danger">*</span></label>
@@ -74,12 +80,14 @@
                                     <label class="form-control-label" for="kategori_id">Kategori<span
                                             class="small text-danger">*</span></label>
                                     <select id="kategori_id" class="form-control" name="kategori_id">
-                                        <option value="{{ $event->kategori_id }}" selected disabled hidden>
-                                            {{ $event->kategori->nama_kategori }}</option>
                                         @foreach ($kategori as $Kategori)
-                                            <option value="{{ $Kategori->id }}">{{ $Kategori->nama_kategori }}</option>
+                                            <option value="{{ $Kategori->id }}"
+                                                {{ $event->kategori_id == $Kategori->id ? 'selected' : '' }}>
+                                                {{ $Kategori->nama_kategori }}
+                                            </option>
                                         @endforeach
                                     </select>
+
                                 </div>
                             </div>
                         </div>

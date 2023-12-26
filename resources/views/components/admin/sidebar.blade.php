@@ -4,9 +4,9 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
         <div class="sidebar-brand-icon">
-            <img src="{{ asset('img/logo.png') }}" width="60%">
+            <img src="{{ asset('images/f.png') }}" width="60%">
         </div>
-        <div class="sidebar-brand-text mx-3">Festoris</div>
+        <div class="sidebar-brand-text mx-3">Festori</div>
     </a>
 
     <!-- Divider -->

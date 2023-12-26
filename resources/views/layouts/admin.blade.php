@@ -10,7 +10,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Admin Festori</title>
 
     <!-- Fonts -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -20,7 +20,7 @@
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
     <!-- Favicon -->
-    <link href="{{ asset('img/logo.png') }}" rel="icon" type="image/png">
+    <link href="{{ asset('images/f.png') }}" rel="icon" type="image/png">
 </head>
 <body id="page-top">
 

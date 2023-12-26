@@ -45,8 +45,12 @@
                                         placeholder="Isikan Nama event">
                                     <label class="form-control-label" for="deskripsi_event">Deskripsi<span
                                             class="small text-danger">*</span></label>
-                                    <input type="text" id="deskripsi_event" class="form-control" name="deskripsi_event"
-                                        placeholder="Isikan Deskripsi_event">
+                                    <div id="deskripsi_event"></div>
+                                    <input type="hidden" id="deskripsi_event_input" name="deskripsi_event" value="">
+                                    {{-- <input type="text" id="deskripsi_event" class="form-control" name="deskripsi_event"
+                                        placeholder="Isikan Deskripsi_event"> --}}
+
+
                                     <label class="form-control-label" for="foto_event">Foto<span
                                             class="small text-danger">*</span></label>
                                     <input type="file" id="foto_event" class="form-control" name="foto_event"

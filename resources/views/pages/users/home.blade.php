@@ -11,10 +11,10 @@
                             <div class="col-md-7 col-lg-6 ">
                                 <div class="detail-box">
                                     <h1>
-                                        Festori
+                                        Selamat Datang di Dunia Gaya & Suara Terkini!
                                     </h1>
                                     <p>
-                                        Info seputar event
+                                        Mendalamilah dunia di mana fashion dan musik bersatu, menciptakan pengalaman digital yang tak terlupakan. Jelajahi tata letak yang dinamis dan antarmuka yang ramah pengguna yang mencakup keindahan yang lahir dari keragaman gaya dan keunikan ekspresi musikal.
                                     </p>
                                     {{-- <div class="btn-box">
                                         <a href="" class="btn1">
@@ -37,18 +37,12 @@
                             <div class="col-md-7 col-lg-6 ">
                                 <div class="detail-box">
                                     <h1>
-                                        Fast event Restaurant
+                                        Temukan Tren Terbaru dalam Fashion & Musik
                                     </h1>
                                     <p>
-                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad
-                                        mollitia laborum quam quisquam esse error unde. Tempora ex doloremque,
-                                        labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                        Terokailah tren terkini dalam industri fashion dan musik dengan wawasan mendalam kami. Mulai dari busana streetwear hingga haute couture, dari melodi emosional hingga getaran bass yang kuat, kami mengabadikan setiap aspek yang membuat jantung berdegup kencang. Belanja online dengan mudah, menikmati koleksi yang dirangkai dengan cermat untuk memenuhi selera yang beragam.
                                     </p>
-                                    <div class="btn-box">
-                                        <a href="" class="btn1">
-                                            Order Now
-                                        </a>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-md-7 col-lg-6 ">
@@ -65,18 +59,11 @@
                             <div class="col-md-7 col-lg-6 ">
                                 <div class="detail-box">
                                     <h1>
-                                        Fast event Restaurant
+                                        Event Eksklusif: Harmoni Gaya dan Nada
                                     </h1>
                                     <p>
-                                        Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad
-                                        mollitia laborum quam quisquam esse error unde. Tempora ex doloremque,
-                                        labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                                        Bergabunglah dengan kami dalam acara eksklusif yang menyatukan dengan sempurna kekuatan fashion dan musik. Saksikan pertunjukan langsung dari para seniman terkenal dan dapatkan akses VIP ke koleksi edisi terbatas yang tidak tersedia di tempat lain. Jadilah bagian dari komunitas dinamis kami, di mana para penggemar musik dan fashion berbagi ide, pengalaman, dan tren pribadi mereka. Perjalanan Anda dimulai dengan setiap klik, membawa Anda lebih dekat pada pemahaman mendalam tentang gaya dan suara zaman kita.
                                     </p>
-                                    <div class="btn-box">
-                                        <a href="" class="btn1">
-                                            Order Now
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-7 col-lg-6 ">
@@ -124,7 +111,7 @@
                                     {{$last->nama_event}}
                                     </h5>
                                     <span>
-                                        {{$last->deskripsi_event}}
+                                        {!! Str::words($last->deskripsi_event, 5, ' ...')!!}
                                     </span>
                                     <div>
                                         <p class="m-0 mt-2">
@@ -193,7 +180,7 @@
                                     {{$Event->nama_event}}
                                     </h5>
                                     <span>
-                                        {{$Event->deskripsi_event}}
+                                        {!! Str::words($Event->deskripsi_event, 6, ' ...')!!}
                                     </span>
                                     <div>
                                         <p class="m-0 mt-2">
@@ -206,11 +193,11 @@
                                         </p>
                                         <p class="m-0">
                                             <strong>Jumlah Tiket:</strong>
-                                            <span class="ml-2"><strong>{{ $last->tiket->isNotEmpty() ? $last->tiket->first()->jumlah_tiket : 'tiket belum tersedia' }}</strong></span>
+                                            <span class="ml-2">{{ $Event->tiket->isNotEmpty() ? $Event->tiket->first()->jumlah_tiket : 'tiket belum tersedia' }}</span>
                                         </p>
                                         <p class="m-0">
                                             <strong>Harga Tiket:</strong>
-                                            <span class="ml-2"><strong>{{ $last->tiket->isNotEmpty() ? $last->tiket->first()->harga_tiket : '-' }}</strong></span>
+                                            <span class="ml-2">{{ $Event->tiket->isNotEmpty() ? $Event->tiket->first()->harga_tiket : '-' }}</span>
                                         </p>
                                     </div>
                                     <div class="options ml-auto">

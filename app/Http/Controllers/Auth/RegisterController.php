@@ -49,21 +49,23 @@ class RegisterController extends Controller
         $role = $data['role'];
 
         if ($role === 'user') {
-            return User::create([
+            User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
             ]);
+            return redirect()->route('login');
         } elseif ($role === 'userEvent') {
-            return UserEvent::create([
+            UserEvent::create([
                 'name_user_event' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
             ]);
+            return redirect()->route('login');
         }
 
         // Handle other cases if needed
 
-        return redirect()->route('login');
+        
     }
 }

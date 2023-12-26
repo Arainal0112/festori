@@ -56,7 +56,11 @@
                                             <td>{{$Event->waktu}}</td>
                                             {{-- <td><img src="{{ asset('images/event/' . $Event->foto_event) }}" width="100px"></td> --}}
                                             <td>{{$Event->tanggal_event}}</td>
-                                            <td>{{$Event->status}}</td>
+                                            @if ($Event->status == 'success')
+                                            <td><span class="status-success">{{$Event->status}}</span></td>
+                                            @else
+                                            <td><span class="status">{{$Event->status}}</span></td>
+                                            @endif
                                             <td>
                                                 <a class="btn btn-primary" href="{{ route('event.show', $Event->id) }}"><i class="fa-solid fa-circle-info"></i></a>
                                                 <a class="btn btn-secondary" href="{{ route('event.edit', $Event->id) }}"><i class="fa-solid fa-pen-to-square"></i></a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\Kategori;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -45,9 +46,18 @@ class HomeController extends Controller
         $event = Event::find($id);
         return view('pages.users.detail', compact('event'));
     }
+
     public function eventAll(){
         return view('pages.users.event');
     }
+    public function riwayat (){
+        $transaksi = Transaksi::all();
+        $event = Event::all();
+        return view('pages.users.riwayat', compact('event', 'transaksi'));
+    }
+
+
+
     // USER EVENT
     public function user_event()
     {

@@ -32,7 +32,7 @@
                                 {{$Event->nama_event}}
                                 </h5>
                                 <span>
-                                    {{$Event->deskripsi_event}}
+                                    {!! Str::words($Event->deskripsi_event, 5, ' ...')!!}
                                 </span>
                                 <div>
                                     <p class="m-0 mt-2">

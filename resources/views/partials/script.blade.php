@@ -1,4 +1,5 @@
 
+
   <!-- jQery -->
   
   <script src={{ asset('js/jquery-3.4.1.min.js')}}></script>
@@ -14,6 +15,8 @@
   <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
   <!-- nice select -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
   <!-- custom js -->
   <script src={{ asset('js/custom.js')}}></script>
   <!-- Google Map -->

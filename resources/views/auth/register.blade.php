@@ -7,7 +7,12 @@
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                            <div class="d-flex align-items-center justify-content-center" style="height: 100%;">
+                                <img src="{{ asset('images/welcome.png') }}" alt="">
+                            </div>
+                            
+                        </div>
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
@@ -47,7 +52,7 @@
                                         <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group form-control-user">
                                         <label for="role">{{ __('Role') }}</label>
                                         <select id="role" class="form-control" name="role" required>
                                             <option value="user">User</option>
